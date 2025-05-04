@@ -24,10 +24,10 @@ class TransactionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date' => 'required|date',
+            'date' => 'required|date|before_or_equal:today',
             'description' => 'required|string',
             'type' => 'required|in:Income,Expense',
-            'amount' => 'required|numeric|min:0.01',
+            'amount' => 'required|numeric|min:1',
         ];
     }
 }

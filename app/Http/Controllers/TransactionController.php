@@ -35,4 +35,20 @@ class TransactionController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(TransactionRequest $request, int $id)
+    {
+        $data = $request->validated();
+
+        $this->transactionService->update($data, $id);
+
+        return redirect()->back();
+    }
+
+    public function destroy(int $id)
+    {
+        $this->transactionService->destroy($id);
+
+        return redirect()->back();
+    }
 }

@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::controller(TransactionController::class)->group(function () {
     Route::get('/', 'index');
     Route::post('/transactions', 'store');
+    Route::put('/transactions/{id}', 'update');
+    Route::delete('/transactions/{id}', 'destroy');
 });
